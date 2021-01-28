@@ -1,28 +1,33 @@
 'use strict';
 
 {
-  const id = [];
+  const todos = [];
 
   document.querySelector('button').addEventListener('click', () => {
     const task = document.getElementById('task');
     
-    const li_1 = document.createElement('li');
-    id.push(li_1);
-    li_1.textContent = id.length - 1;
-    document.getElementById('number').appendChild(li_1);
-
+    const todo = 
+    {
+      id: todos.length,
+      task: task.value,
+      status: '作業中',
+    };
+    todos.push(todo);
     
-    const li_2 = document.createElement('li');
-    li_2.textContent = task.value;
-    document.getElementById('conte').appendChild(li_2);
+    function displayTodos() {
+      let table = document.querySelector('table');
+      let newRow = table.insertRow();
 
-    const li_3 = document.createElement('li');
-    li_3.innerHTML = '<button>作業中</button> <button>削除</button>';
-    document.getElementById('state').appendChild(li_3);
+      Object.values(todo).forEach(element => {
+          let newCell = newRow.insertCell();
+          let newText = document.createTextNode(element);
+          newCell.appendChild(newText);    
+      });
+    };  
 
-    task.value = ' ';
-    task.focus();
+    displayTodos();
 
-  });
+    task.value = "";
 
+  });  
 }

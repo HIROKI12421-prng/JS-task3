@@ -4,18 +4,6 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>JavaScript課題③-1</title>
-  <style>
-    .boxContainer{
-      display: flex;
-    }
-    ul{
-      padding-left: 5px;
-    }
-    li{
-      list-style: none;
-      padding-top: 5px;
-    }
-  </style>
 </head>
 
 <body>
@@ -24,22 +12,15 @@
   <input type="radio" name="work">作業中
   <input type="radio" name="done">完了
 
-  <div class="boxContainer">
-    <div class="container">
-      <p>ID</p>
-      <ul id="number"></ul>
-    </div>
-  
-    <div class="container">
-      <p>コメント</p>
-      <ul id="conte"></ul>
-    </div>
-  
-    <div class="container">
-      <p>状態</p>
-      <ul id="state"></ul>
-    </div>
-  </div>
+
+  <table>
+    <tr>
+      <td>ID</td>
+      <td>コメント</td>
+      <td>状態</td>
+    </tr>
+  </table>
+
 
   <h2>新規タスクの追加</h2>
   <input type="text" id="task">
