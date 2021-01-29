@@ -11,6 +11,7 @@
       id: todos.length,
       task: task.value,
       status: '作業中',
+      delete: '削除',
     };
     todos.push(todo);
     
@@ -20,14 +21,21 @@
 
       Object.values(todo).forEach(element => {
           let newCell = newRow.insertCell();
-          let newText = document.createTextNode(element);
-          newCell.appendChild(newText);    
+
+          if(element === todos.length - 1 || element === task.value) {
+            let newText = document.createTextNode(element);
+            newCell.appendChild(newText);    
+          } else {
+            let newButton = document.createElement('button');
+            newButton.textContent = element;
+            newCell.appendChild(newButton);    
+          }
       });
     };  
 
     displayTodos();
 
-    task.value = "";
+    task.value = '';
 
   });  
 }
